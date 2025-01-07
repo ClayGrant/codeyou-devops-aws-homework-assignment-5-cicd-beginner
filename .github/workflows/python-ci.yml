@@ -31,7 +31,7 @@ jobs:
     - name: Install + run safety (vulnrabilities)
       run: |
         pip install safety
-        safety check -r requirements.txt
+        safety scan -r requirements.txt
 
     - name: Install + run bandit (security)
       run: |
