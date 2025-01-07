@@ -31,7 +31,8 @@ jobs:
     - name: Install + run safety (vulnrabilities)
       run: |
         pip install safety
-        safety scan -r requirements.txt --api-key: ${{ secrets.SAFETY_API_KEY }}
+        export SAFETY_API_KEY=${{ secrets.SAFETY_API_KEY }}
+        safety scan -r requirements.txt
 
     - name: Install + run bandit (security)
       run: |
